@@ -1,0 +1,22 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity INTEGER, size INTEGER);
+
+INSERT INTO store VALUES (1, "shorts", 10, 20, "s,m,l");
+INSERT INTO store VALUES (2, "blouse", 6, 30, "s,m,l");
+INSERT INTO store VALUES (3, "shoes", 15, 20, "7,8,9");
+INSERT INTO store VALUES (4, "sunglasses", 5, 15, "n/a");
+INSERT INTO store VALUES (5, "bathing suits", 8, 10, "s,m,l");
+INSERT INTO store VALUES (6, "hats", 5, 15, "one-size");
+INSERT INTO store VALUES (7, "underware", 3.99, 20, "s,m,l");
+INSERT INTO store VALUES (8, "socks", 5, 20, "one-size");
+INSERT INTO store VALUES (9, "rings", 5, 30, "7,8,9");
+INSERT INTO store VALUES (10, "necklace", 6, 30, "one-size");
+INSERT INTO store VALUES (11, "earrings", 7, 30, "n/a");
+INSERT INTO store VALUES (12, "bracelets", 8, 30, "s,m");
+INSERT INTO store VALUES (13, "dresses", 10, 15, "s,m,l"); 
+INSERT INTO store VALUES (14, "jeans", 20, 15, "s,m,l");
+INSERT INTO store VALUES (15, "jackets", 25, 20, "s,m,l");
+
+SELECT * FROM store WHERE price >=3.99
+ORDER BY price asc;
+
+SELECT SUM(price) FROM store;
