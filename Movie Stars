@@ -1,0 +1,26 @@
+
+
+CREATE TABLE movie_stars(id INTEGER PRIMARY KEY AUTOINCREMENT, fullname TEXT, age INTEGER, net_worth INTEGER);
+
+INSERT INTO movie_stars (fullname, age, net_worth) VALUES ("Ben Affleck", "50", "150");
+INSERT INTO movie_stars (fullname, age, net_worth) VALUES ("Antonio Banderas", "62", "50");
+INSERT INTO movie_stars (fullname, age, net_worth) VALUES ("Jessica Alba", "42", "100" );
+INSERT INTO movie_stars (fullname, age, net_worth) VALUES ("Sofia Vergara", "51", "180" );
+INSERT INTO movie_stars (fullname, age, net_worth) VALUES ("George Clooney", "62", "500");
+
+
+CREATE TABLE Movies (id INTEGER PRIMARY KEY 
+AUTOINCREMENT, actor_id INTEGER, movie_name TEXT, movie_year TEXT);
+
+INSERT INTO Movies (actor_id, movie_name, movie_year) VALUES (1, "Badman V Superman", "2016");
+INSERT INTO Movies (actor_id, movie_name, movie_year) VALUES (2, "The Mask of Zorro", "1998");
+INSERT INTO Movies (actor_id, movie_name, movie_year) VALUES (3, "Honey", "2003");
+INSERT INTO Movies (actor_id, movie_name, movie_year) VALUES (4, "Hot Pursuit", "2015");
+INSERT INTO Movies (actor_id, movie_name, movie_year) VALUES (5, "Money Monster", "2016");
+
+SELECT movie_stars.fullname, Movies.movie_name, Movies.movie_year FROM movie_stars JOIN Movies ON movie_stars.id= Movies.actor_id; 
+
+SELECT movie_stars.fullname, movie_stars.net_worth, Movies.movie_name FROM movie_stars JOIN Movies ON movie_stars.id=Movies.actor_id
+WHERE net_worth >= 50 ORDER BY net_worth asc;
+
+SELECT movie_stars.fullname,age,net_worth, Movies.movie_name,movie_year FROM movie_stars JOIN Movies ON movie_stars.id=Movies.actor_id WHERE age>=40 GROUP BY fullname ; 
